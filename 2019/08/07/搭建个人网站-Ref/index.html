@@ -857,13 +857,13 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
         el: '#comments' ,
-        verify: false,
+        verify: true,
         notify: false,
         appId: 'o4PUjJiySoN1aohIoQV16peK-gzGzoHsz',
         appKey: 'i77DXMSWotbzxHOVvFHRU1vR',
