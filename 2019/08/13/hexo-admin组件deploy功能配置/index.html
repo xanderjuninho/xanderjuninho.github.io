@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hexo-admin,spawn&exec,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[报错] Error: Config value “admin.deployCommand” not found   123[解决] /hexo/_config.ymladmin:	deployCommand: &apos;./hexo-deploy.sh&apos;  Error: spawn ENOENT [1] 123456[原因] windows下npm执行名不同[解决] /*.jsvar ps = requ">
+<meta name="keywords" content="hexo-admin,spawn&amp;exec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo-admin组件deploy功能配置问题">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/hexo-admin组件deploy功能配置/index.html">
+<meta property="og:site_name" content="X .Blog">
+<meta property="og:description" content="[报错] Error: Config value “admin.deployCommand” not found   123[解决] /hexo/_config.ymladmin:	deployCommand: &apos;./hexo-deploy.sh&apos;  Error: spawn ENOENT [1] 123456[原因] windows下npm执行名不同[解决] /*.jsvar ps = requ">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-14T12:30:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo-admin组件deploy功能配置问题">
+<meta name="twitter:description" content="[报错] Error: Config value “admin.deployCommand” not found   123[解决] /hexo/_config.ymladmin:	deployCommand: &apos;./hexo-deploy.sh&apos;  Error: spawn ENOENT [1] 123456[原因] windows下npm执行名不同[解决] /*.jsvar ps = requ">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/13/hexo-admin组件deploy功能配置/">
+
+
+
+
+
+  <title>hexo-admin组件deploy功能配置问题 | X .Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">X .Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/hexo-admin组件deploy功能配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xanderjuninho">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X .Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo-admin组件deploy功能配置问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T20:28:00+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-14T20:30:42+08:00">
+                2019-08-14
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/13/hexo-admin组件deploy功能配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/hexo-admin组件deploy功能配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="报错"><a href="#报错" class="headerlink" title="[报错]"></a>[报错]</h3><ol>
+<li><p>Error: Config value “admin.deployCommand” not found  </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[解决]</span> <span class="string">/hexo/_config.yml</span></span><br><span class="line"><span class="attr">admin:</span></span><br><span class="line">	<span class="attr">deployCommand:</span> <span class="string">'./hexo-deploy.sh'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Error: spawn ENOENT [1]</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[原因] windows下npm执行名不同</span><br><span class="line">[解决] <span class="comment">/*.js</span></span><br><span class="line"><span class="comment">var ps = require('child_process').spawn(process.platform === "win32" ? "npm.cmd" : "npm", ['install'], &#123;</span></span><br><span class="line"><span class="comment">    stdio: 'inherit',</span></span><br><span class="line"><span class="comment">    cwd: srcPath</span></span><br><span class="line"><span class="comment">&#125;);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo-admin在线部署功能各种报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[猜想]</span><br><span class="line">1.deploy.js库中命令适用于Linux,不适用于Windows</span><br><span class="line">2.spawn与exec区别</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><h4 id="spawn和exec参数区别-2"><a href="#spawn和exec参数区别-2" class="headerlink" title="spawn和exec参数区别 [2]"></a>spawn和exec参数区别 [2]</h4><p><code>child_process.spawn(command,[args],[options])</code><br><strong>command String</strong> 将要运行的命令。<br><strong>args Array</strong> 字符串参数数组。<br><strong>options</strong> 配置对象：</p>
+<ul>
+<li>cwd String 子进程的当前工作目录</li>
+<li>env Object 环境变量键值对</li>
+<li>stdio Array|String 子进程的stdio配置</li>
+<li>detached Boolean 这个子进程将会变成进程组的领导</li>
+<li>uid Number 设置用户进程的ID</li>
+<li>gid Number 设置进程组的ID<br>返回值: ChildProcess对象  </li>
+</ul>
+<p>利用给定的命令以及参数执行一个新的进程，如果没有参数数组，那么args将默认是一个空数组。</p>
+<p><code>child_process.exec(command,[options],callback)</code><br><strong>command String</strong> 将要运行的命令,参数使用空格隔开<br><strong>options</strong> 配置对象：</p>
+<ul>
+<li>cwd String 子进程的当前工作目录。  </li>
+<li>env Object 环境变量键值对</li>
+<li>encoding String 字符编码（默认：’utf8’）</li>
+<li>shell String 将要执行命令的Shell（默认: 在UNIX中为/bin/sh， 在Windows中为cmd.exe， Shell应当能识别 -c 开关在UNIX中，或 /s /c 在Windows中。 在Windows中，命令行解析应当能兼容cmd.exe）。  timeout Number 超时时间（默认： 0）</li>
+<li>maxBuffer Number 在stdout或stderr中允许存在的最大缓冲（二进制），如果超出那么子进程将会被杀死 （默认: 200*1024）</li>
+<li>killSignal String 结束信号（默认：’SIGTERM’）</li>
+<li>detached Boolean 这个子进程将会变成进程组的领导</li>
+<li>uid Number 设置用户进程的ID</li>
+<li>gid Number 设置进程组的ID</li>
+</ul>
+<h4 id="spawn和exec调用对象区别-2"><a href="#spawn和exec调用对象区别-2" class="headerlink" title="spawn和exec调用对象区别 [2]"></a>spawn和exec调用对象区别 [2]</h4><p><code>spawn</code>接受的第一个参数为文件，而<code>exec</code>接受的第一个参数是命令。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Node源码中关于spawn的部分</span></span><br><span class="line"><span class="keyword">var</span> spawn = exports.spawn = <span class="function"><span class="keyword">function</span>(<span class="params">file, args, options</span>)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// exec部分</span></span><br><span class="line"> <span class="keyword">if</span> (process.platform === <span class="string">'win32'</span>) &#123;</span><br><span class="line">	file = <span class="string">'cmd.exe'</span>;</span><br><span class="line">	args = [<span class="string">'/s'</span>, <span class="string">'/c'</span>, <span class="string">'"'</span> + command + <span class="string">'"'</span>];</span><br><span class="line">	<span class="comment">// Make a shallow copy before patching so we don't clobber the user's</span></span><br><span class="line">	<span class="comment">// options object.</span></span><br><span class="line">	options = util._extend(&#123;&#125;, options);</span><br><span class="line">	options.windowsVerbatimArguments = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  file = <span class="string">'/bin/sh'</span>;</span><br><span class="line">  args = [<span class="string">'-c'</span>, command];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以在Windows下直接运行 require(‘child_process’).spawn(‘dir’) 会报异常说没有此文件，而使用exec则不会。若要使用spwan，应写成require(‘child_process’).spawn(‘cmd.exe’,[‘\s’, ‘\c’, ‘dir’])。</p>
+<h4 id="spawn和exec返回值区别-2-3-4"><a href="#spawn和exec返回值区别-2-3-4" class="headerlink" title="spawn和exec返回值区别 [2,3,4]"></a>spawn和exec返回值区别 [2,3,4]</h4><p>child_process.spawn 返回一个有输出流和错误流的对象，可以监听它们从而获取数据，输出流有数据和结束事件。<br>child_process.spawn 适合用在处理大量数据返回的场景中，图片处理，读二进制数据(文件读取)等等。<br>child_process.spawn 是一个异步函数，在执行时就会返回数据，而不是等到数据都处理好了再一次返回。  </p>
+<p>child_process.exec 一次性返回输出执行结果内容，默认的buffer大小为200kb，如果exec返回的内容超过 200kb则会返回一个错误(Error maxBuffer execeded)，可以通过设置options buffer的size来扩大 buffer的大小。<br>child_process.exec 是一个同步的异步方法，虽然方法体本身是异步的，但是它要等 child process 执行完成后，再把返回数据全返回给回调方法。exec方法相比spawn方法多提供了一个回调函数，可以获取子进程输出。这与为返回的ChildProcess对象的stdout或stderr监听data事件来获得输出的区别在于：data事件的方式会在子进程有数据时就触发，并把数据返回给Node。而回调函数，则会先将数据缓存在内存中（数据量小于maxBuffer参数），等待子进程运行完毕后再调用回调函数，并把最终数据交给回调函数。</p>
+<h4 id="spawn在windows运行问题-5"><a href="#spawn在windows运行问题-5" class="headerlink" title="spawn在windows运行问题 [5]"></a>spawn在windows运行问题 [5]</h4><p>Node.js的子进程<code>child_process</code>下的<code>spawn</code>函数可以用于调用系统上的命令，在 Linux, macOS 等系统上可以执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用 npm 命令</span></span><br><span class="line"><span class="keyword">const</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn;</span><br><span class="line"></span><br><span class="line">spawn(<span class="string">'npm'</span>, &#123;</span><br><span class="line"> stdio: <span class="string">'inherit'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 同样的语句在 Windows 上执行会报错</span></span><br><span class="line"><span class="built_in">Error</span>: spawn npm ENOENT</span><br><span class="line"> at exports._errnoException (util.js:<span class="number">855</span>:<span class="number">11</span>)</span><br><span class="line"> at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">178</span>:<span class="number">32</span>)</span><br><span class="line"> at onErrorNT (internal/child_process.js:<span class="number">344</span>:<span class="number">16</span>)</span><br><span class="line"> at nextTickCallbackWith2Args (node.js:<span class="number">455</span>:<span class="number">9</span>)</span><br><span class="line"> at process._tickCallback (node.js:<span class="number">369</span>:<span class="number">17</span>)</span><br><span class="line"> at <span class="built_in">Function</span>.Module.runMain (<span class="built_in">module</span>.js:<span class="number">432</span>:<span class="number">11</span>)</span><br><span class="line"> at startup (node.js:<span class="number">141</span>:<span class="number">18</span>)</span><br><span class="line"> at node.js:<span class="number">980</span>:<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>因为在 Windows 上执行 npm 时，实际执行的是<code>npm.cmd</code>批处理，而在 Windows 上，<code>.cmd</code>,<code>.bat</code>批处理无法脱离<code>cmd.exe</code>解释器而单独运行的。因此，需要显式地调用<code>cmd</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spawn(<span class="string">'cmd'</span>, [<span class="string">'/c'</span>, <span class="string">'npm'</span>], &#123;</span><br><span class="line"> stdio: <span class="string">'inherit'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者在调用spawn时，设置shell选项为true以隐式地调用cmd（Node.js v6+）</span></span><br><span class="line">spawn(<span class="string">'npm'</span>, &#123;</span><br><span class="line"> stdio: <span class="string">'inherit'</span>,</span><br><span class="line"> shell: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>虽然在Linux, macOS等系统上不需要设置<code>shell</code>选项，命令也能正常执行；设置<code>shell</code>为<code>true</code>也不会妨碍命令的执行，只是会额外的产生一个不必要的<code>shell</code>进程影响性能。</p>
+<p>因此，编写跨平台的spawn命令又不想增加额外的开销，可以:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> process = <span class="built_in">require</span>(<span class="string">'process'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; spawn &#125; = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</span><br><span class="line"></span><br><span class="line">spawn(<span class="string">'npm'</span>, &#123;</span><br><span class="line"> stdio: <span class="string">'inherit'</span>,</span><br><span class="line"> <span class="comment">// 仅在当前运行环境为 Windows 时，才使用 shell</span></span><br><span class="line"> shell: process.platform === <span class="string">'win32'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="node-js执行shell命令-6"><a href="#node-js执行shell命令-6" class="headerlink" title="node.js执行shell命令 [6]"></a>node.js执行shell命令 [6]</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入子进程模块</span></span><br><span class="line"><span class="keyword">var</span> process = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用该模块exec方法</span></span><br><span class="line">process.exec(<span class="string">'shutdown -h now'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">error, stdout, stderr</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 回调函数非必须</span></span><br><span class="line">        <span class="keyword">if</span> (error !== <span class="literal">null</span>) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'exec error: '</span> + error);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="已实现-未解决-跟踪web请求-修改-hexo-admin-deploy-js库源码"><a href="#已实现-未解决-跟踪web请求-修改-hexo-admin-deploy-js库源码" class="headerlink" title="[已实现,未解决] 跟踪web请求,修改/hexo-admin/deploy.js库源码"></a>[已实现,未解决] 跟踪web请求,修改<code>/hexo-admin/deploy.js</code>库源码</h3><h4 id="v-0-1-使用exec"><a href="#v-0-1-使用exec" class="headerlink" title="v 0.1 使用exec"></a>v 0.1 使用exec</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行: 在开启hexo服务的git-bash中执行</span></span><br><span class="line"><span class="comment">// 效果: 执行速度慢,能在当前页面下方获得git-bash部署信息</span></span><br><span class="line"><span class="comment">// 警告: DeprecationWarning: fs.SyncWriteStream is deprecated. </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//var spawn = require('child_process').spawn</span></span><br><span class="line"><span class="keyword">var</span> process = <span class="built_in">require</span>(<span class="string">'child_process'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">once</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> called = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!called) fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    called = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">command, message, done</span>) </span>&#123;</span><br><span class="line">  done = once(done);</span><br><span class="line">  <span class="comment">//var proc = spawn(command, [message], &#123;detached: true, stdio: 'inherit', shell: true&#125;);</span></span><br><span class="line">  <span class="keyword">var</span> proc = process.exec(<span class="string">'sh '</span>+command, [message]);</span><br><span class="line">  <span class="keyword">var</span> stdout = <span class="string">''</span></span><br><span class="line">  <span class="keyword">var</span> stderr = <span class="string">''</span>;</span><br><span class="line">  proc.stdout.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;stdout += data.toString()&#125;)</span><br><span class="line">  proc.stderr.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;stderr += data.toString()&#125;)</span><br><span class="line">  proc.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    done(err, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  proc.on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    done(<span class="literal">null</span>, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="v-0-2-使用spawn"><a href="#v-0-2-使用spawn" class="headerlink" title="v 0.2 使用spawn"></a>v 0.2 使用spawn</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行: 新开cmd,hexo执行</span></span><br><span class="line"><span class="comment">// 效果: 速度快(主客观),不在当前页面下方获得部署信息</span></span><br><span class="line"><span class="comment">// 警告: DeprecationWarning: fs.SyncWriteStream is deprecated. </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn</span><br><span class="line"><span class="comment">//var process = require('child_process')</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">once</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> called = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!called) fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    called = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">command, message, done</span>) </span>&#123;</span><br><span class="line">  done = once(done);</span><br><span class="line">  <span class="keyword">var</span> proc = spawn(<span class="string">'sh '</span>+command, [message], &#123;<span class="attr">detached</span>: <span class="literal">true</span>, <span class="attr">stdio</span>: <span class="string">'inherit'</span>, <span class="attr">shell</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  <span class="comment">//var proc = process.exec('sh '+command, [message]);</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> stdout = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> stderr = <span class="string">''</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 空指针报错(Error: Cannot read property 'on' of null),但不影响功能</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//proc.stdout.on('data', function(data)&#123;stdout += data.toString()&#125;)</span></span><br><span class="line">  <span class="comment">//proc.stderr.on('data', function(data)&#123;stderr += data.toString()&#125;)</span></span><br><span class="line">  proc.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    done(err, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  proc.on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    done(<span class="literal">null</span>, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="已放弃"><a href="#已放弃" class="headerlink" title="[已放弃]"></a>[已放弃]</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>npm install --save hexo-admin</span><br><span class="line">  deploy.js源码仍报警告</span><br><span class="line"><span class="number">2.</span>exec和spawn当前情况都像是同步方法</span><br></pre></td></tr></table></figure>
+
+<h3 id="T-Q"><a href="#T-Q" class="headerlink" title="T/Q:"></a>T/Q:</h3><ol>
+<li>Node.js中spawn与exec</li>
+<li>Windows下spawn问题</li>
+<li>js执行脚本文件(e.g. <code>.sh</code>)</li>
+</ol>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h3><p>[1] nodejs在spawn中执行npm报错 [Error: spawn ENOENT]<br><a href="https://www.cnblogs.com/xiziyin/p/3578905.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiziyin/p/3578905.html</a><br>[2] Node.js中spawn与exec的异同比较<br><a href="https://segmentfault.com/a/1190000002913884" target="_blank" rel="noopener">https://segmentfault.com/a/1190000002913884</a><br>[3]. exec和spawn的区别<br><a href="https://www.cnblogs.com/xiaoniuzai/p/6889164.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoniuzai/p/6889164.html</a><br>[4]. Noxde.js: Difference between spawn and exec of child_process<br><a href="https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html" target="_blank" rel="noopener">https://www.hacksparrow.com/nodejs/difference-between-spawn-and-exec-of-node-js-child-rocess.html</a><br>[5] 利用Node.js编写跨平台的spawn语句详解<br><a href="https://www.zhangshengrong.com/p/On1voV7zay/" target="_blank" rel="noopener">https://www.zhangshengrong.com/p/On1voV7zay/</a><br>[6] node.js执行shell命令<br><a href="https://www.cnblogs.com/hf8051/p/4794627.html" target="_blank" rel="noopener">https://www.cnblogs.com/hf8051/p/4794627.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+	<div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">---------------     The End     ---------------</div>
+    
+</div>
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo-admin/" rel="tag"># hexo-admin</a>
+          
+            <a href="/tags/spawn-exec/" rel="tag"># spawn&exec</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/13/hexo-admin及hexo添加图片/" rel="next" title="hexo-admin及hexo添加图片">
+                <i class="fa fa-chevron-left"></i> hexo-admin及hexo添加图片
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/14/DeprecationWarning-fs-SyncWriteStream-is-deprecated/" rel="prev" title="DeprecationWarning: fs.SyncWriteStream is deprecated.">
+                DeprecationWarning: fs.SyncWriteStream is deprecated. <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="xanderjuninho">
+            
+              <p class="site-author-name" itemprop="name">xanderjuninho</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xanderjuninho" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xanderje9@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://xanderje.com" title="Xanderje .Com" target="_blank">Xanderje .Com</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">1.</span> <span class="nav-text">[报错]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B"><span class="nav-number">2.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spawn和exec参数区别-2"><span class="nav-number">2.1.</span> <span class="nav-text">spawn和exec参数区别 [2]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spawn和exec调用对象区别-2"><span class="nav-number">2.2.</span> <span class="nav-text">spawn和exec调用对象区别 [2]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spawn和exec返回值区别-2-3-4"><span class="nav-number">2.3.</span> <span class="nav-text">spawn和exec返回值区别 [2,3,4]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spawn在windows运行问题-5"><span class="nav-number">2.4.</span> <span class="nav-text">spawn在windows运行问题 [5]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-js执行shell命令-6"><span class="nav-number">2.5.</span> <span class="nav-text">node.js执行shell命令 [6]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已实现-未解决-跟踪web请求-修改-hexo-admin-deploy-js库源码"><span class="nav-number">3.</span> <span class="nav-text">[已实现,未解决] 跟踪web请求,修改/hexo-admin/deploy.js库源码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-0-1-使用exec"><span class="nav-number">3.1.</span> <span class="nav-text">v 0.1 使用exec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-0-2-使用spawn"><span class="nav-number">3.2.</span> <span class="nav-text">v 0.2 使用spawn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#已放弃"><span class="nav-number">3.3.</span> <span class="nav-text">[已放弃]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T-Q"><span class="nav-number">4.</span> <span class="nav-text">T/Q:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">5.</span> <span class="nav-text">Ref:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xanderjuninho</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">8.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'o4PUjJiySoN1aohIoQV16peK-gzGzoHsz',
+        appKey: 'i77DXMSWotbzxHOVvFHRU1vR',
+        placeholder: 'Join the discussion...',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
