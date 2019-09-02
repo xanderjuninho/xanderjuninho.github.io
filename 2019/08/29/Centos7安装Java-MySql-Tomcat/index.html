@@ -471,7 +471,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">29-Aug-2019 17:14:39.214 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.</span><br><span class="line">29-Aug-2019 17:34:28.851 WARNING [main] </span><br><span class="line">// 主要耗时 19.8min</span><br><span class="line">org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,189,633] milliseconds.</span><br><span class="line">29-Aug-2019 17:34:29.037 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'SpringMVC'</span><br><span class="line">29-Aug-2019 17:34:30.256 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1219 ms</span><br><span class="line">29-Aug-2019 17:34:30.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/apache-tomcat-9.0.21/webapps/docs]</span><br></pre></td></tr></table></figure>
 
 <p>[引发问题] tomcat开启未完全时, <code>./shutdown 报错且显示tomcat未运行</code> &amp; <code>./startup.sh 报错显示address/port已被占用</code><br>[已解决] 修改 java.security (总耗时: 0.08s, 5,265 ms)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">JAVA_HOME/jre/lib/security/java.security</span></span><br><span class="line">-</span><br><span class="line">securerandom.source=file:/dev/random</span><br><span class="line">securerandom.source=file:/dev/urandom	改后</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/jre/lib/security/java.security</span><br><span class="line">-</span><br><span class="line">securerandom.source=file:/dev/random</span><br><span class="line">securerandom.source=file:/dev/urandom	改后</span><br></pre></td></tr></table></figure>
 
 <h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p>[1] CentOS 7 安装 JAVA环境（JDK 1.8） <a href="https://www.cnblogs.com/stulzq/p/9286878.html" target="_blank" rel="noopener">https://www.cnblogs.com/stulzq/p/9286878.html</a><br>[2] CentOS7环境下安装MySQL <a href="https://blog.csdn.net/qq_37798548/article/details/82733575" target="_blank" rel="noopener">https://blog.csdn.net/qq_37798548/article/details/82733575</a></p>
 
@@ -529,6 +529,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/02/Thymeleaf在js中的使用/" rel="prev" title="Thymeleaf在js中的使用">
+                Thymeleaf在js中的使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -610,7 +614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -753,7 +757,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.5k</span>
+    <span title="Site words total count">9.9k</span>
   
 </div>
 
