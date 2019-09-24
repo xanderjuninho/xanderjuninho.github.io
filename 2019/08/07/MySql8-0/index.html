@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="X .Blog">
 <meta property="og:description" content="授权问题Mysql8.0 需要先创建用户再授权 (不能在grant授权时隐式创建用户)[报错]: You are not allowed to create a user with GRANT 123mysql&amp;gt; CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;pSassword&apos;;mysql&amp;gt; grant all privileges on *.* to">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-09T01:58:51.497Z">
+<meta property="og:updated_time" content="2019-09-24T14:27:53.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql8.0">
 <meta name="twitter:description" content="授权问题Mysql8.0 需要先创建用户再授权 (不能在grant授权时隐式创建用户)[报错]: You are not allowed to create a user with GRANT 123mysql&amp;gt; CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;pSassword&apos;;mysql&amp;gt; grant all privileges on *.* to">
@@ -324,7 +324,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T13:59:00+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T13:59:00+01:00">
                 2019-08-07
               </time>
             
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-09T09:58:51+08:00">
-                2019-09-09
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-24T15:27:53+01:00">
+                2019-09-24
               </time>
             
           </span>
@@ -426,7 +426,7 @@
 <h3 id="密码加密问题"><a href="#密码加密问题" class="headerlink" title="密码加密问题"></a>密码加密问题</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// MySQL8.0加密方式变为 caching_sha2_password,命令行直连</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> caching_sha2_password <span class="keyword">BY</span> <span class="string">'password'</span>;</span><br><span class="line"></span><br><span class="line">// 用于Navicat(远程)连接</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> mysql_native_password <span class="keyword">BY</span> <span class="string">'password'</span>;</span><br></pre></td></tr></table></figure>
 
 <h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p><strong>[可能引发问题:表名等使用Mysql中的关键字]</strong> Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta<br><strong>[Mysql 8 中所有关键字]</strong><br><code>ACCESSIBLE, ADD, ALL, ALTER, ANALYZE, AND, AS, ASC, ASENSITIVE, BEFORE, BETWEEN, BIGINT, BINARY, BLOB, BOTH, BY, CALL, CASCADE, CASE, CHANGE, CHAR, CHARACTER, CHECK, COLLATE, COLUMN, CONDITION, CONSTRAINT, CONTINUE, CONVERT, CREATE, CROSS, CUBE, CUME_DIST, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_USER, CURSOR, DATABASE, DATABASES, DAY_HOUR, DAY_MICROSECOND, DAY_MINUTE, DAY_SECOND, DEC, DECIMAL, DECLARE, DEFAULT, DELAYED, DELETE, DENSE_RANK, DESC, DESCRIBE, DETERMINISTIC, DISTINCT, DISTINCTROW, DIV, DOUBLE, DROP, DUAL, EACH, ELSE, ELSEIF, EMPTY, ENCLOSED, ESCAPED, EXCEPT, EXISTS, EXIT, EXPLAIN, FALSE, FETCH, FIRST_VALUE, FLOAT, FLOAT4, FLOAT8, FOR, FORCE, FOREIGN, FROM, FULLTEXT, FUNCTION, GENERATED, GET, GRANT, GROUP, GROUPING, GROUPS, HAVING, HIGH_PRIORITY, HOUR_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, IF, IGNORE, IN, INDEX, INFILE, INNER, INOUT, INSENSITIVE, INSERT, INT, INT1, INT2, INT3, INT4, INT8, INTEGER, INTERVAL, INTO, IO_AFTER_GTIDS, IO_BEFORE_GTIDS, IS, ITERATE, JOIN, JSON_TABLE, KEY, KEYS, KILL, LAG, LAST_VALUE, LEAD, LEADING, LEAVE, LEFT, LIKE, LIMIT, LINEAR, LINES, LOAD, LOCALTIME, LOCALTIMESTAMP, LOCK, LONG, LONGBLOB, LONGTEXT, LOOP, LOW_PRIORITY, MASTER_BIND, MASTER_SSL_VERIFY_SERVER_CERT, MATCH, MAXVALUE, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, MIDDLEINT, MINUTE_MICROSECOND, MINUTE_SECOND, MOD, MODIFIES, NATURAL, NOT, NO_WRITE_TO_BINLOG, NTH_VALUE, NTILE, NULL, NUMERIC, OF, ON, OPTIMIZE, OPTIMIZER_COSTS, OPTION, OPTIONALLY, OR, ORDER, OUT, OUTER, OUTFILE, OVER, PARTITION, PERCENT_RANK, PERSIST, PERSIST_ONLY, PRECISION, PRIMARY, PROCEDURE, PURGE, RANGE, RANK, READ, READS, READ_WRITE, REAL, RECURSIVE, REFERENCES, REGEXP, RELEASE, RENAME, REPEAT, REPLACE, REQUIRE, RESIGNAL, RESTRICT, RETURN, REVOKE, RIGHT, RLIKE, ROW, ROWS, ROW_NUMBER, SCHEMA, SCHEMAS, SECOND_MICROSECOND, SELECT, SENSITIVE, SEPARATOR, SET, SHOW, SIGNAL, SMALLINT, SPATIAL, SPECIFIC, SQL, SQLEXCEPTION, SQLSTATE, SQLWARNING, SQL_BIG_RESULT, SQL_CALC_FOUND_ROWS, SQL_SMALL_RESULT, SSL, STARTING, STORED, STRAIGHT_JOIN, SYSTEM, TABLE, TERMINATED, THEN, TINYBLOB, TINYINT, TINYTEXT, TO, TRAILING, TRIGGER, TRUE, UNDO, UNION, UNIQUE, UNLOCK, UNSIGNED, UPDATE, USAGE, USE, USING, UTC_DATE, UTC_TIME, UTC_TIMESTAMP, VALUES, VARBINARY, VARCHAR, VARCHARACTER, VARYING, VIRTUAL, WHEN, WHERE, WHILE, WINDOW, WITH, WRITE, XOR, YEAR_MONTH, ZEROFILL, CUME_DIST, DENSE_RANK, EMPTY, EXCEPT, FIRST_VALUE, GROUPING, GROUPS, JSON_TABLE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, OF, OVER, PERCENT_RANK, PERSIST, PERSIST_ONLY, RANK, RECURSIVE, ROW_NUMBER, SYSTEM, WINDOW</code></p>
-<h3 id="拼接字符串-查询结果列"><a href="#拼接字符串-查询结果列" class="headerlink" title="拼接字符串(查询结果列)"></a>拼接字符串(查询结果列)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GROUP_CANCAT(col1,..., string1,...)</span><br><span class="line"><span class="keyword">SELECT</span> match_id,GROUP_CANCAT(score,<span class="string">'('</span>,assist,<span class="string">')'</span>) <span class="keyword">AS</span> goals <span class="keyword">from</span> goal <span class="keyword">GROUP</span> <span class="keyword">BY</span> match_id;</span><br></pre></td></tr></table></figure>
+<h3 id="拼接字符串-查询结果列"><a href="#拼接字符串-查询结果列" class="headerlink" title="拼接字符串(查询结果列)"></a>拼接字符串(查询结果列)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GROUP_CONCAT(col1,..., string1,...)</span><br><span class="line"><span class="keyword">SELECT</span> match_id,<span class="keyword">GROUP_CONCAT</span>(score,<span class="string">'('</span>,assist,<span class="string">')'</span>) <span class="keyword">AS</span> goals <span class="keyword">from</span> goal <span class="keyword">GROUP</span> <span class="keyword">BY</span> match_id;</span><br></pre></td></tr></table></figure>
       
     </div>
     
