@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="X .Blog">
 <meta property="og:description" content="安装Java [1] 下载jdk-8u201-linux-x64.tar.gz ,Xftp传到/usr/local/java  解压 1tar -zxvf jdk-8u201-linux-x64.tar.gz  配置环境变量 12345/etc/profile 末尾添加export JAVA_HOME=/usr/local/java/jdk1.8.0_201export JRE_HOME=$&amp;#1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-29T12:17:33.446Z">
+<meta property="og:updated_time" content="2019-10-14T08:08:58.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos7安装Java,MySql,Tomcat">
 <meta name="twitter:description" content="安装Java [1] 下载jdk-8u201-linux-x64.tar.gz ,Xftp传到/usr/local/java  解压 1tar -zxvf jdk-8u201-linux-x64.tar.gz  配置环境变量 12345/etc/profile 末尾添加export JAVA_HOME=/usr/local/java/jdk1.8.0_201export JRE_HOME=$&amp;#1">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-29T13:17:33+01:00">
-                2019-08-29
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-14T09:08:58+01:00">
+                2019-10-14
               </time>
             
           </span>
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  657
+                  686
                 </span>
               
 
@@ -441,10 +441,10 @@
 </li>
 <li><p>解压<br><code>tar -xvf mysql-8.0.17-1.el7.x86_64.rpm-bundle.tar</code></p>
 </li>
-<li><p>卸载冲突的RPM组件<br>查看:<br><code>rpm -qa | grep postfix</code><br><code>rpm -qa | grep mariadb</code><br>卸载:<br><code>rpm -ev postfix-2.10.1-6.el7.x86_64</code><br><code>rpm -ev mariadb-libs-5.5.52-1.el7.x86_64</code><br>强制卸载:<br><code>rpm -e --nodeps mariadb-libs-5.5.52-1.el7.x86_64</code></p>
+<li><p>卸载冲突的RPM组件, 根据报错再调整<br>查看:<br><code>rpm -qa | grep postfix</code><br><code>rpm -qa | grep mariadb</code><br>卸载:<br><code>rpm -ev postfix-2.10.1-6.el7.x86_64</code><br><code>rpm -ev mariadb-libs-5.5.52-1.el7.x86_64</code><br>强制卸载:<br><code>rpm -e --nodeps mariadb-libs-5.5.52-1.el7.x86_64</code></p>
 </li>
-<li><p>安装依赖</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libaio</span><br><span class="line">yum -y install net-tools</span><br><span class="line">yum -y install perl</span><br></pre></td></tr></table></figure>
+<li><p>安装依赖, 根据报错再调整</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libaio</span><br><span class="line">yum -y install net-tools</span><br><span class="line">yum -y install perl</span><br><span class="line">//解决Failed dependencies:libnuma.so.1()(64bit) is needed by mysql-communit</span><br><span class="line">yum install numactl</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>按顺序安装mysql组件(存在依赖关系)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-8.0.17-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-8.0.17-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-8.0.17-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-8.0.17-1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
@@ -457,12 +457,12 @@
 </li>
 </ol>
 <h2 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h2><ol>
-<li><p>下载<code>apache-tomcat-9.0.21.tar.gz</code> ,Xftp传到<code>/usr/local/tomcat</code></p>
+<li><p>下载<code>apache-tomcat-9.0.24.tar.gz</code> ,Xftp传到<code>/usr/local/tomcat</code></p>
 </li>
 <li><p>解压<br><code>tar -zxvf apache-tomcat-9.0.24.tar.gz</code></p>
 </li>
 <li><p>启动/关闭</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/tomcat/apache-tomcat-9.0.21/bin</span><br><span class="line">./startup.sh</span><br><span class="line">./shutdown.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/tomcat/apache-tomcat-9.0.24/bin</span><br><span class="line">./startup.sh</span><br><span class="line">./shutdown.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置解决启动慢  </p>
 </li>
