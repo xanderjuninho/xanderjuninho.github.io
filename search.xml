@@ -16,12 +16,12 @@
     <content type="text"><![CDATA[slice()[对象] String, Array 不改变原对象[参数] slice(i, [j])i: 开始索引值,负数代表从末尾起的索引值 (-1:最后一个)j: 结束索引值，缺省表i至末尾 split()[参数] split(separator, [howmany])separator: 字符串或正则表达式howmany: (可省略) 返回数组的最大长度返回值: 字符串数组 (字符串分割) 若separator 为包含子表达式的正则表达式, 那么返回的数组中包括与这些子表达式匹配的字串（但不包括与整个正则表达式匹配的文本） substring() 和 substr()substring(start,stop)substr(start，length) substring() stop应大于start (如果start大于stop, 两个参数位置会被自动调换) splice()数组中添加/删除项目, 返回原数组, 该方法会改变原始数组[对象] Array[参数] splice(index,howmany, [item1,itemx] )index: 添加/删除索引值(支持负数)howmany: 要删除的数量item1…itemX: 向数组添加的对象]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Aux_M]]></title>
+    <title><![CDATA[aux_m]]></title>
     <url>%2F2019%2F09%2F06%2FAux-M%2F</url>
     <content type="text"><![CDATA[获得Post和PUT请求中未被封装的数据1234public String addMatch(Match match, HttpServletRequest request) &#123; request.getParameter("goalScore" + i); request.getParameter("goalAssist" + i));&#125; jQuery中$(.select).val()问题$(“#XxxForm select”).val([“value”]); 有时候数据回显会出错,传值基本不会 分页查询,高级查询12345678// PageHelper分页查询public PageInfo&lt;Goal&gt; getGoals(Integer pageNum, Integer pageSize) &#123; PageHelper.startPage(pageNum, pageSize); PageHelper.orderBy("id asc"); List&lt;Goal&gt; goals = goalMapper.selectByExample(null); PageInfo&lt;Goal&gt; pageInfo = new PageInfo&lt;&gt;(goals, 5); return pageInfo;&#125; 1234567// 高级查询public List&lt;Squad&gt; getSquadByYear(Integer year) &#123; SquadExample example = new SquadExample(); example.createCriteria().andYearEqualTo(year); example.setOrderByClause("name asc"); return squadMapper.selectByExample(example);&#125; 获取ajax请求结果 async : false 设置ajax同步 用ajax请求外变量接收result model生命周期为request级别传参数Model而非Request, 减少侵入性,更符合MVC设计思想]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Aux_Html]]></title>
+    <title><![CDATA[aux_html]]></title>
     <url>%2F2019%2F09%2F06%2FAux-Html%2F</url>
     <content type="text"><![CDATA[a标签style=”color: white;” 字体颜色 style=”text-decoration: none;” 取消下划线 button标签style=”color: white;” 按钮内字体颜色 image标签height=”150” width=”150” 图片大小 style=”cursor: pointer;” 鼠标移至图片上变手状 input标签type=”number” step=”0.1” 允许小数 #上下/左右居中, 悬浮居左/居右style=”vertical-align: middle;text-align: center;” 12345// 悬浮居左/居右&lt;div&gt; &lt;h1 style="float:left"&gt;xxx&lt;/h1&gt; &lt;button style="float:right;" class="btn btn-primary"&gt;New&lt;/button&gt;&lt;/div&gt; input 长度限制12345// text类型&lt;input type="text" maxlength="20"&gt;// number类型 (添加oninput事件限制,存在问题:在前面添加值,后面值将消失)&lt;input type="number" oninput="if(value.length&gt;4) value=value.slice(0,4);"&gt; 文本类型输入: textarea1&lt;textarea rows="7" placeholder="other..." maxlength="1000"&gt;&lt;/textarea&gt; Html5事件方法全部汇总http://www.divcss5.com/html5/h50577.shtml]]></content>
   </entry>
@@ -75,7 +75,7 @@
   <entry>
     <title><![CDATA[.]]></title>
     <url>%2F2019%2F08%2F16%2FM1565959260%2F</url>
-    <content type="text"><![CDATA[(M1565959260)]]></content>
+    <content type="text"><![CDATA[M1565959260]]></content>
       <categories>
         <category>Miscellaneous</category>
       </categories>
@@ -122,14 +122,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[.]]></title>
-    <url>%2F2019%2F08%2F11%2FM1565530800%2F</url>
-    <content type="text"><![CDATA[Unexpectedly walking the night out of the feeling of intimacy. (M1565530800)]]></content>
-      <categories>
-        <category>Miscellaneous</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Mysql8.0]]></title>
     <url>%2F2019%2F08%2F07%2FMySql8-0%2F</url>
     <content type="text"><![CDATA[授权问题Mysql8.0 需要先创建用户再授权 (不能在grant授权时隐式创建用户)[报错]: You are not allowed to create a user with GRANT 123mysql&gt; CREATE USER 'root'@'%' IDENTIFIED BY 'pSassword';mysql&gt; grant all privileges on *.* to 'root'@'%'; 密码加密问题12345// MySQL8.0加密方式变为 caching_sha2_password,命令行直连ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';// 用于Navicat(远程)连接ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; 关键字[可能引发问题:表名等使用Mysql中的关键字] Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta[Mysql 8 中所有关键字]ACCESSIBLE, ADD, ALL, ALTER, ANALYZE, AND, AS, ASC, ASENSITIVE, BEFORE, BETWEEN, BIGINT, BINARY, BLOB, BOTH, BY, CALL, CASCADE, CASE, CHANGE, CHAR, CHARACTER, CHECK, COLLATE, COLUMN, CONDITION, CONSTRAINT, CONTINUE, CONVERT, CREATE, CROSS, CUBE, CUME_DIST, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_USER, CURSOR, DATABASE, DATABASES, DAY_HOUR, DAY_MICROSECOND, DAY_MINUTE, DAY_SECOND, DEC, DECIMAL, DECLARE, DEFAULT, DELAYED, DELETE, DENSE_RANK, DESC, DESCRIBE, DETERMINISTIC, DISTINCT, DISTINCTROW, DIV, DOUBLE, DROP, DUAL, EACH, ELSE, ELSEIF, EMPTY, ENCLOSED, ESCAPED, EXCEPT, EXISTS, EXIT, EXPLAIN, FALSE, FETCH, FIRST_VALUE, FLOAT, FLOAT4, FLOAT8, FOR, FORCE, FOREIGN, FROM, FULLTEXT, FUNCTION, GENERATED, GET, GRANT, GROUP, GROUPING, GROUPS, HAVING, HIGH_PRIORITY, HOUR_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, IF, IGNORE, IN, INDEX, INFILE, INNER, INOUT, INSENSITIVE, INSERT, INT, INT1, INT2, INT3, INT4, INT8, INTEGER, INTERVAL, INTO, IO_AFTER_GTIDS, IO_BEFORE_GTIDS, IS, ITERATE, JOIN, JSON_TABLE, KEY, KEYS, KILL, LAG, LAST_VALUE, LEAD, LEADING, LEAVE, LEFT, LIKE, LIMIT, LINEAR, LINES, LOAD, LOCALTIME, LOCALTIMESTAMP, LOCK, LONG, LONGBLOB, LONGTEXT, LOOP, LOW_PRIORITY, MASTER_BIND, MASTER_SSL_VERIFY_SERVER_CERT, MATCH, MAXVALUE, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, MIDDLEINT, MINUTE_MICROSECOND, MINUTE_SECOND, MOD, MODIFIES, NATURAL, NOT, NO_WRITE_TO_BINLOG, NTH_VALUE, NTILE, NULL, NUMERIC, OF, ON, OPTIMIZE, OPTIMIZER_COSTS, OPTION, OPTIONALLY, OR, ORDER, OUT, OUTER, OUTFILE, OVER, PARTITION, PERCENT_RANK, PERSIST, PERSIST_ONLY, PRECISION, PRIMARY, PROCEDURE, PURGE, RANGE, RANK, READ, READS, READ_WRITE, REAL, RECURSIVE, REFERENCES, REGEXP, RELEASE, RENAME, REPEAT, REPLACE, REQUIRE, RESIGNAL, RESTRICT, RETURN, REVOKE, RIGHT, RLIKE, ROW, ROWS, ROW_NUMBER, SCHEMA, SCHEMAS, SECOND_MICROSECOND, SELECT, SENSITIVE, SEPARATOR, SET, SHOW, SIGNAL, SMALLINT, SPATIAL, SPECIFIC, SQL, SQLEXCEPTION, SQLSTATE, SQLWARNING, SQL_BIG_RESULT, SQL_CALC_FOUND_ROWS, SQL_SMALL_RESULT, SSL, STARTING, STORED, STRAIGHT_JOIN, SYSTEM, TABLE, TERMINATED, THEN, TINYBLOB, TINYINT, TINYTEXT, TO, TRAILING, TRIGGER, TRUE, UNDO, UNION, UNIQUE, UNLOCK, UNSIGNED, UPDATE, USAGE, USE, USING, UTC_DATE, UTC_TIME, UTC_TIMESTAMP, VALUES, VARBINARY, VARCHAR, VARCHARACTER, VARYING, VIRTUAL, WHEN, WHERE, WHILE, WINDOW, WITH, WRITE, XOR, YEAR_MONTH, ZEROFILL, CUME_DIST, DENSE_RANK, EMPTY, EXCEPT, FIRST_VALUE, GROUPING, GROUPS, JSON_TABLE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, OF, OVER, PERCENT_RANK, PERSIST, PERSIST_ONLY, RANK, RECURSIVE, ROW_NUMBER, SYSTEM, WINDOW 拼接字符串(查询结果列)12GROUP_CONCAT(col1,..., string1,...)SELECT match_id,GROUP_CONCAT(score,'(',assist,')') AS goals from goal GROUP BY match_id;]]></content>
@@ -149,22 +141,6 @@
     <title><![CDATA[1-12名胡莱三国武将排名及技能搭配]]></title>
     <url>%2F2019%2F08%2F05%2F1-12%E5%90%8D%E8%83%A1%E8%8E%B1%E4%B8%89%E5%9B%BD%E6%AD%A6%E5%B0%86%E6%8E%92%E5%90%8D%E5%8F%8A%E6%8A%80%E8%83%BD%E6%90%AD%E9%85%8D%2F</url>
     <content type="text"><![CDATA[No.1 周瑜 统御之王天生技能，运筹帷幄Ⅲ 带兵上限多25%，兵多才是硬道理，单一兵越多兵的攻击和防御越高，技能搭配，运筹，特攻，特防，同仇，重弓，如打造攻城周瑜则破竹，如守则破釜沉舟！注：兵的攻击胜于防御！同级情况下周瑜第一！ No.2 张郃 单挑之王天生技能，无懈可击Ⅲ，降低伤害20%，注：具体伤害的算法是，对方攻击-自身防御*20%！卓越的攻击，单挑搭配技能，无懈，体魄，坚若，防专，专攻，注：武将的防御胜攻击，无懈加硬气或者保护盾则技能重叠！ No.3 张飞 下马之王天生技能，专攻弱点Ⅲ，对付除张郃之外的武将下马几率极高，搭配技能，专攻，骁勇，武专，浑天（或体魄），重弓（无懈）！注：专杀吕布，就怕张颌！ No.4 吕布 打兵之王天生技能，骁勇善战Ⅲ，攻击最高着，技能搭配，骁勇，武专，防专，重弓，最后一个加个运筹，浑天，专攻都行，不让我下马就等我报复你小弟吧！ No.5 夏侯惇 魏延 特种兵王子夏侯惇特种兵攻击Ⅲ，魏延特种兵防御Ⅲ，特种兵攻击/防御提高25%，他们的5个技能主要搭配是 特攻 特防 运筹 势如破竹 步步为营或一鼓作气 或同仇敌忾，不逊于周瑜。注：吴国有特种兵防御加成，所以魏延厉害，魏国有特种兵攻击加成，所以夏侯惇厉害。 No.6 黄忠 曹仁 弓兵王子黄忠弓兵攻击Ⅲ，曹仁弓兵防御Ⅲ，弓兵攻击/防御提高25%，弓兵拥有先手优势，他们都是防御卓越，5个技能主要搭配是弓攻 弓防 运筹 势如破竹 步步为营或一鼓作气 或同仇敌忾。 No.7 孙策 陆逊 攻城机器孙策攻击卓越，势如破竹Ⅲ（攻城麾下部队攻击力提高13%），陆逊防御卓越，步步为营Ⅲ（攻城时麾下部队防御力提高13%），他们的技能搭配多种多样，主要是统御技能，必须要运筹帷幄，提高带兵上限，玩什么兵种，看你自己选择，当然特种兵最好。 No.8 周泰 李典 步兵王子周泰步兵攻击Ⅲ，李典步兵防御Ⅲ，步兵攻击/防御提高25%，由于玩弓兵的人较多，步兵正好克制弓兵，他们的5个技能主要搭配是步攻 步防 运筹 势如破竹 步步为营或一鼓作气 或同仇敌忾。 No.9 程普 血牛体强健魄Ⅲ，血量增加20%，级越高血量越明显，属于混合型武将，一般不会被打下马，可以先补完其兵科加成+运筹帷幄+同仇敌忾+满弦+防御技能（硬气功、无懈可击、防具专精，防止被打成重伤）或专攻弱点（增加打兵数），这样他就由将变成了帅，虽然单挑极有可能会输，但最后的胜利却极有可能属于你。 No.10 太史慈 关羽 骑兵王子太史慈攻击卓越，骑兵防御Ⅲ，关羽攻击优秀，骑兵攻击Ⅲ，由于玩弓兵的人较多，骑兵被弓兵克，所以骑兵不是很好，他们的5个技能主要搭配是骑攻 骑防 运筹 势如破竹 步步为营或一鼓作气 或同仇敌忾。 No.11 许褚 赵云 守城王子许褚攻击卓越，破斧沉舟Ⅲ（守城时麾下部队攻击力提高13%），赵云资质平庸，壁垒森严Ⅲ（守城时麾下部队防御力提高13%），这两个将领只能用来守城，或者不怕死的话也可以用在战场上，打赢了，模式还是用全力出击，等着别人来攻击，很有机会让别人全军覆没，技能玩特种兵最好，运筹是必须的，其他的看自己怎么玩。 No.12 张辽 肉盾天升技能坚若磐石Ⅲ，（防御力增加10%），这个没有好将的时候可以练下，我觉得不怎么好，技能搭配以防御和血量为主，外加打兵技能。]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[离别-白居易]]></title>
-    <url>%2F2019%2F08%2F05%2F%E7%A6%BB%E5%88%AB(%E7%99%BD%E5%B1%85%E6%98%93)%2F</url>
-    <content type="text"><![CDATA[深秋时节话别离，冷风瑟瑟叶满溪。胸中无限慷与慨，转身欲语泪沾衣。青山不改水长流，明月依旧星渐稀。天长地久有尽时，此恨绵绵无绝期。]]></content>
-      <categories>
-        <category>Poem</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[将进酒-李白]]></title>
-    <url>%2F2019%2F08%2F05%2F%E5%B0%86%E8%BF%9B%E9%85%92(%E6%9D%8E%E7%99%BD)%2F</url>
-    <content type="text"><![CDATA[君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。]]></content>
-      <categories>
-        <category>Poem</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[胡莱三国全武将学习技能表]]></title>
