@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="CodeBean类日期标签1234567// Spring的处理框架, 将时间格式化@DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)	// yyyy-MM-dd HH:mm:ss// 设置Json输出格式(用于ResponsesBody), 不加时区会出现差八小时问题@JsonFormat(pattern = &quot;yy/MM/dd&quot;,timezone=&quot;GMT+8&quot;)p">
+<meta name="description" content="[问题] url中存在中文,请求出错[解决] 添加一个过滤器123456789101112&amp;lt;filter&amp;gt;  &amp;lt;filter-name&amp;gt;urlFilter&amp;lt;/filter-name&amp;gt;  &amp;lt;filter-class&amp;gt;com.test.UrlFilter&amp;lt;/filter-class&amp;gt;  &amp;lt;init-param&amp;gt;    &amp;lt;pa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日期和时间类型">
-<meta property="og:url" content="http://yoursite.com/2019/09/06/日期和时间类型/index.html">
+<meta property="og:title" content="Tomcat-web,url请求中文资源的问题">
+<meta property="og:url" content="http://yoursite.com/2020/01/29/Tomcat-web中url请求中文资源的问题/index.html">
 <meta property="og:site_name" content="X .Blog">
-<meta property="og:description" content="CodeBean类日期标签1234567// Spring的处理框架, 将时间格式化@DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)	// yyyy-MM-dd HH:mm:ss// 设置Json输出格式(用于ResponsesBody), 不加时区会出现差八小时问题@JsonFormat(pattern = &quot;yy/MM/dd&quot;,timezone=&quot;GMT+8&quot;)p">
+<meta property="og:description" content="[问题] url中存在中文,请求出错[解决] 添加一个过滤器123456789101112&amp;lt;filter&amp;gt;  &amp;lt;filter-name&amp;gt;urlFilter&amp;lt;/filter-name&amp;gt;  &amp;lt;filter-class&amp;gt;com.test.UrlFilter&amp;lt;/filter-class&amp;gt;  &amp;lt;init-param&amp;gt;    &amp;lt;pa">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/DateFormatInMysql.png">
-<meta property="og:updated_time" content="2020-01-29T14:48:42.593Z">
+<meta property="og:updated_time" content="2020-01-29T14:06:07.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日期和时间类型">
-<meta name="twitter:description" content="CodeBean类日期标签1234567// Spring的处理框架, 将时间格式化@DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)	// yyyy-MM-dd HH:mm:ss// 设置Json输出格式(用于ResponsesBody), 不加时区会出现差八小时问题@JsonFormat(pattern = &quot;yy/MM/dd&quot;,timezone=&quot;GMT+8&quot;)p">
-<meta name="twitter:image" content="http://yoursite.com/images/DateFormatInMysql.png">
+<meta name="twitter:title" content="Tomcat-web,url请求中文资源的问题">
+<meta name="twitter:description" content="[问题] url中存在中文,请求出错[解决] 添加一个过滤器123456789101112&amp;lt;filter&amp;gt;  &amp;lt;filter-name&amp;gt;urlFilter&amp;lt;/filter-name&amp;gt;  &amp;lt;filter-class&amp;gt;com.test.UrlFilter&amp;lt;/filter-class&amp;gt;  &amp;lt;init-param&amp;gt;    &amp;lt;pa">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/06/日期和时间类型/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/29/Tomcat-web中url请求中文资源的问题/">
 
 
 
 
 
-  <title>日期和时间类型 | X .Blog</title>
+  <title>Tomcat-web,url请求中文资源的问题 | X .Blog</title>
   
 
 
@@ -296,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/日期和时间类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/Tomcat-web中url请求中文资源的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xanderjuninho">
@@ -313,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">日期和时间类型</h1>
+          <h1 class="post-title" itemprop="name headline">Tomcat-web,url请求中文资源的问题</h1>
         
 
         <div class="post-meta">
@@ -325,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-06T16:16:00+01:00">
-                2019-09-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-29T13:58:49+00:00">
+                2020-01-29
               </time>
             
 
@@ -341,7 +339,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-01-29T14:48:42+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-01-29T14:06:07+00:00">
                 2020-01-29
               </time>
             
@@ -356,8 +354,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/06/日期和时间类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/06/日期和时间类型/" itemprop="commentCount"></span>
+                <a href="/2020/01/29/Tomcat-web中url请求中文资源的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/29/Tomcat-web中url请求中文资源的问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,7 +382,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  317
+                  250
                 </span>
               
 
@@ -421,28 +419,9 @@
       
 
       
-        <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="Bean类日期标签"><a href="#Bean类日期标签" class="headerlink" title="Bean类日期标签"></a>Bean类日期标签</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Spring的处理框架, 将时间格式化</span></span><br><span class="line"><span class="meta">@DateTimeFormat</span>(pattern = <span class="string">"yyyy-MM-dd"</span>)	<span class="comment">// yyyy-MM-dd HH:mm:ss</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置Json输出格式(用于ResponsesBody), 不加时区会出现差八小时问题</span></span><br><span class="line"><span class="meta">@JsonFormat</span>(pattern = <span class="string">"yy/MM/dd"</span>,timezone=<span class="string">"GMT+8"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> Date date;</span><br></pre></td></tr></table></figure>
+        <h3 id="问题-url中存在中文-请求出错"><a href="#问题-url中存在中文-请求出错" class="headerlink" title="[问题] url中存在中文,请求出错"></a>[问题] url中存在中文,请求出错</h3><h3 id="解决-添加一个过滤器"><a href="#解决-添加一个过滤器" class="headerlink" title="[解决] 添加一个过滤器"></a>[解决] 添加一个过滤器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>urlFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.test.UrlFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>DEFAULT_URI_ENCODE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>urlFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// min max 需补零</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">max</span>=<span class="string">"2050-06-30"</span> <span class="attr">min</span>=<span class="string">"2017-07-01"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">// 取值,返回String, 年月日缺一都为空字符串 ''</span><br><span class="line">$("#inputDate").val()</span><br></pre></td></tr></table></figure>
-
-<h3 id="Mysql中日期和时间类型-1"><a href="#Mysql中日期和时间类型-1" class="headerlink" title="Mysql中日期和时间类型 [1]"></a>Mysql中日期和时间类型 [1]</h3><p><img src="/images/DateFormatInMysql.png" alt="DateFormatInMysql"></p>
-<p>TIMESTAMP: 把客户端插入的时间从当前时区转化为UTC进行存储; 查询时, 转化为客户端时区进行返回。(跨时区)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#时间转换为时间戳: UNIX_TIMESTAMP</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">UNIX_TIMESTAMP</span>(<span class="string">'2019-01-01 00:00:00'</span>);</span><br><span class="line"><span class="comment">#时间戳转换为时间: FROM_UNIXTIME</span></span><br><span class="line"><span class="keyword">SELECT</span> FROM_UNIXTIME(<span class="number">1546272000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据年月日查</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> matchx <span class="keyword">WHERE</span> <span class="keyword">DATE_FORMAT</span>(<span class="built_in">date</span>, <span class="string">'%Y-%m-%d'</span>)=<span class="string">'2019-01-01'</span>;</span><br><span class="line"><span class="comment">#根据年月查</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> matchx <span class="keyword">WHERE</span> <span class="keyword">DATE_FORMAT</span>(<span class="built_in">date</span>, <span class="string">'%Y-%m'</span>)=<span class="string">'2019-01'</span>;</span><br><span class="line"><span class="comment">#根据年查</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> matchx <span class="keyword">WHERE</span> <span class="keyword">DATE_FORMAT</span>(<span class="built_in">date</span>, <span class="string">'%Y'</span>)=<span class="string">'2019'</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Date类-java-util-Date-2"><a href="#Date类-java-util-Date-2" class="headerlink" title="Date类 java.util.Date [2]"></a>Date类 java.util.Date [2]</h3><p>YEAR: y-1900</p>
-<p>MONTH: 0-11 </p>
-<p>DAY: 1-31</p>
-<p>HOUR: 0-23</p>
-<p>MINUTE: 0-59  </p>
-<ol>
-<li><p>yyyy-MM-dd HH:mm:ss   H为24小时制, h为12小时制,hh自动补零</p>
-</li>
-<li><p>[java.sql.Date用于SQL语句, 只有日期而没有时间部分]</p>
-</li>
-</ol>
-<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><p>[1] MySQL中时间日期类型的使用 <a href="https://blog.csdn.net/csdnluolei/article/details/86488461" target="_blank" rel="noopener">https://blog.csdn.net/csdnluolei/article/details/86488461</a></p>
-<p>[2] java.util.Date <a href="https://www.cnblogs.com/gaofeng0527/p/6001143.html" target="_blank" rel="noopener">https://www.cnblogs.com/gaofeng0527/p/6001143.html</a></p>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.URLDecoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.Filter;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterChain;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UrlFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String DEFAULT_URI_ENCODE = <span class="string">"UTF-8"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> FilterConfig config = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> String encode = <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.config = config;</span><br><span class="line">        <span class="keyword">this</span>.encode = config.getInitParameter(<span class="string">"DEFAULT_URI_ENCODE"</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.encode == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.encode = DEFAULT_URI_ENCODE;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res,</span></span></span><br><span class="line"><span class="function"><span class="params">            FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletRequest request = (HttpServletRequest) req;</span><br><span class="line">        String uri = request.getRequestURI();</span><br><span class="line">        String ch = URLDecoder.decode(uri, encode);</span><br><span class="line">        <span class="keyword">if</span>(uri.equals(ch)) &#123;</span><br><span class="line">            chain.doFilter(req, res);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ch = ch.substring(request.getContextPath().length());</span><br><span class="line">        config.getServletContext().getRequestDispatcher(ch).forward(req, res);</span><br><span class="line">    &#125;    </span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        config = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -476,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/02/分页栏-Bootstrap-webjar-在Thymeleaf下无法显示样式问题/" rel="next" title="分页栏(Bootstrap-webjar)在Thymeleaf下无法显示样式问题">
-                <i class="fa fa-chevron-left"></i> 分页栏(Bootstrap-webjar)在Thymeleaf下无法显示样式问题
+              <a href="/2019/09/09/number类型input限制位数/" rel="next" title="number类型input限制位数">
+                <i class="fa fa-chevron-left"></i> number类型input限制位数
               </a>
             
           </div>
@@ -486,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/06/Aux-Html/" rel="prev" title="aux_html">
-                aux_html <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/29/服务器配置/" rel="prev" title="服务器配置">
+                服务器配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -679,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bean类日期标签"><span class="nav-number">1.1.</span> <span class="nav-text">Bean类日期标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html"><span class="nav-number">1.2.</span> <span class="nav-text">html</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql中日期和时间类型-1"><span class="nav-number">2.</span> <span class="nav-text">Mysql中日期和时间类型 [1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date类-java-util-Date-2"><span class="nav-number">3.</span> <span class="nav-text">Date类 java.util.Date [2]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref"><span class="nav-number">4.</span> <span class="nav-text">Ref</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题-url中存在中文-请求出错"><span class="nav-number">1.</span> <span class="nav-text">[问题] url中存在中文,请求出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-添加一个过滤器"><span class="nav-number">2.</span> <span class="nav-text">[解决] 添加一个过滤器</span></a></li></ol></div>
             
 
           </div>

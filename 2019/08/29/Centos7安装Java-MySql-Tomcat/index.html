@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="X .Blog">
 <meta property="og:description" content="安装Java [1] 下载jdk-8u201-linux-x64.tar.gz ,Xftp传到/usr/local/java  解压 1tar -zxvf jdk-8u201-linux-x64.tar.gz  配置环境变量 12345/etc/profile 末尾添加export JAVA_HOME=/usr/local/java/jdk1.8.0_201export JRE_HOME=$&amp;#1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-14T08:08:58.529Z">
+<meta property="og:updated_time" content="2020-01-29T14:54:41.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos7安装Java,MySql,Tomcat">
 <meta name="twitter:description" content="安装Java [1] 下载jdk-8u201-linux-x64.tar.gz ,Xftp传到/usr/local/java  解压 1tar -zxvf jdk-8u201-linux-x64.tar.gz  配置环境变量 12345/etc/profile 末尾添加export JAVA_HOME=/usr/local/java/jdk1.8.0_201export JRE_HOME=$&amp;#1">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-14T09:08:58+01:00">
-                2019-10-14
+              <time title="Post modified" itemprop="dateModified" datetime="2020-01-29T14:54:41+00:00">
+                2020-01-29
               </time>
             
           </span>
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  686
+                  467
                 </span>
               
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  2
                 </span>
               
             </div>
@@ -464,15 +464,11 @@
 <li><p>启动/关闭</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/tomcat/apache-tomcat-9.0.24/bin</span><br><span class="line">./startup.sh</span><br><span class="line">./shutdown.sh</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置解决启动慢  </p>
-</li>
-</ol>
-<p>[问题]:总耗时: 19.9min, 1,195,393 ms</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">29-Aug-2019 17:14:39.214 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.</span><br><span class="line">29-Aug-2019 17:34:28.851 WARNING [main] </span><br><span class="line">// 主要耗时 19.8min</span><br><span class="line">org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,189,633] milliseconds.</span><br><span class="line">29-Aug-2019 17:34:29.037 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'SpringMVC'</span><br><span class="line">29-Aug-2019 17:34:30.256 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1219 ms</span><br><span class="line">29-Aug-2019 17:34:30.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/apache-tomcat-9.0.21/webapps/docs]</span><br></pre></td></tr></table></figure>
-
-<p>[引发问题] tomcat开启未完全时, <code>./shutdown 报错且显示tomcat未运行</code> &amp; <code>./startup.sh 报错显示address/port已被占用</code><br>[已解决] 修改 java.security (总耗时: 0.08s, 5,265 ms)</p>
+<li><p>配置解决启动慢<br>修改 java.security</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/jre/lib/security/java.security</span><br><span class="line">-</span><br><span class="line">securerandom.source=file:/dev/random</span><br><span class="line">securerandom.source=file:/dev/urandom	改后</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
 <h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p>[1] CentOS 7 安装 JAVA环境（JDK 1.8） <a href="https://www.cnblogs.com/stulzq/p/9286878.html" target="_blank" rel="noopener">https://www.cnblogs.com/stulzq/p/9286878.html</a><br>[2] CentOS7环境下安装MySQL <a href="https://blog.csdn.net/qq_37798548/article/details/82733575" target="_blank" rel="noopener">https://blog.csdn.net/qq_37798548/article/details/82733575</a></p>
 
       
@@ -614,7 +610,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -636,7 +632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -757,7 +753,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.2k</span>
+    <span title="Site words total count">11.3k</span>
   
 </div>
 

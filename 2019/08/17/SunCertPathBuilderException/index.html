@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]尝试一:添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keyst">
+<meta name="description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]一: 添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keysto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STS4创建springboot项目报错SunCertPathBuilderException">
 <meta property="og:url" content="http://yoursite.com/2019/08/17/SunCertPathBuilderException/index.html">
 <meta property="og:site_name" content="X .Blog">
-<meta property="og:description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]尝试一:添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keyst">
+<meta property="og:description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]一: 添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keysto">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-29T12:18:44.980Z">
+<meta property="og:updated_time" content="2020-01-29T14:57:26.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STS4创建springboot项目报错SunCertPathBuilderException">
-<meta name="twitter:description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]尝试一:添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keyst">
+<meta name="twitter:description" content="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE[未完全解决]一: 添加Spring/Maven/AliMaven证书到Java-security 导出网页证书(.cer, X.509格式标准) cmd导证书12345678keytool.exe -importcert –alias 别名 -file 文件名 -keysto">
 
 
 
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-29T13:18:44+01:00">
-                2019-08-29
+              <time title="Post modified" itemprop="dateModified" datetime="2020-01-29T14:57:26+00:00">
+                2020-01-29
               </time>
             
           </span>
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  335
+                  320
                 </span>
               
 
@@ -419,15 +419,15 @@
       
 
       
-        <h4 id="环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE"><a href="#环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE" class="headerlink" title="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE"></a>[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE</h4><h4 id="未完全解决"><a href="#未完全解决" class="headerlink" title="[未完全解决]"></a>[未完全解决]</h4><h4 id="尝试一-添加Spring-Maven-AliMaven证书到Java-security"><a href="#尝试一-添加Spring-Maven-AliMaven证书到Java-security" class="headerlink" title="尝试一:添加Spring/Maven/AliMaven证书到Java-security"></a>尝试一:添加Spring/Maven/AliMaven证书到Java-security</h4><ol>
+        <h4 id="环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE"><a href="#环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE" class="headerlink" title="[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE"></a>[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE</h4><h3 id="未完全解决"><a href="#未完全解决" class="headerlink" title="[未完全解决]"></a>[未完全解决]</h3><h4 id="一-添加Spring-Maven-AliMaven证书到Java-security"><a href="#一-添加Spring-Maven-AliMaven证书到Java-security" class="headerlink" title="一: 添加Spring/Maven/AliMaven证书到Java-security"></a>一: 添加Spring/Maven/AliMaven证书到Java-security</h4><ol>
 <li>导出网页证书(<code>.cer</code>, X.509格式标准)</li>
 <li>cmd导证书<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">keytool.exe -importcert –alias 别名 -file 文件名 -keystore 目录 -storepass 密码</span><br><span class="line">keytool.exe -importcert –alias maven_cer -file maven.cer -keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts -storepass changeit</span><br><span class="line">keytool.exe -importcert –alias springStarter_cer -file springStarter.cer -keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts -storepass changeit</span><br><span class="line">keytool.exe -importcert –alias aliMaven_cer -file aliMaven.cer -keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts -storepass changeit</span><br><span class="line">-</span><br><span class="line">keytool –delete –alias mykey –keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts</span><br><span class="line">keytool –delete –alias maven_cer –keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts</span><br><span class="line">keytool –delete –alias aliMaven_cer –keystore C:\Jdevelop\Java\jdk1.8.0_201\jre\lib\security\cacerts</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<h4 id="尝试二-JDK版本降回1-8"><a href="#尝试二-JDK版本降回1-8" class="headerlink" title="尝试二:JDK版本降回1.8"></a>尝试二:JDK版本降回1.8</h4><p>– Download Java SE 8 (8u211 and later)<br>–&gt; <strong>Download Java SE 8 (8u202 and earlier)</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ref:https://blog.csdn.net/u014653815/article/details/80435226</span><br><span class="line">-</span><br><span class="line">官方对奇/偶数版本区别的解释：</span><br><span class="line">JAVA将会在同一时间发布两个版本的JDK(JDK 7u71版本以后)：</span><br><span class="line">奇数版本为BUG修正并全部通过检验的版本(推荐);偶数版本包含奇数版本所有的内容，以及未被验证的BUG修复</span><br></pre></td></tr></table></figure></p>
-<h4 id="尝试三-重新解压maven-3-6-1"><a href="#尝试三-重新解压maven-3-6-1" class="headerlink" title="尝试三: 重新解压maven_3.6.1"></a>尝试三: 重新解压maven_3.6.1</h4><p>修复org/apache/maven/plugins/maven-war-plugin/3.2.3下载报错<br>[未完全解决]Maven下载不完全问题</p>
-<h4 id="尝试四-改STS设置"><a href="#尝试四-改STS设置" class="headerlink" title="尝试四:改STS设置"></a>尝试四:改STS设置</h4><p>Preferences-General-Network Connections-Active Provider<br>Native -&gt; Direct/Manual</p>
+<h4 id="二-降JDK版本"><a href="#二-降JDK版本" class="headerlink" title="二: 降JDK版本"></a>二: 降JDK版本</h4><p>– Download Java SE 8 (8u211 and later)<br>–&gt; <strong>Download Java SE 8 (8u202 and earlier)</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ref:https://blog.csdn.net/u014653815/article/details/80435226</span><br><span class="line">-</span><br><span class="line">官方对奇/偶数版本区别的解释：</span><br><span class="line">JAVA将会在同一时间发布两个版本的JDK(JDK 7u71版本以后)：</span><br><span class="line">奇数版本为BUG修正并全部通过检验的版本(推荐);</span><br><span class="line">偶数版本包含奇数版本所有的内容，以及未被验证的BUG修复</span><br></pre></td></tr></table></figure></p>
+<h4 id="三-重新解压maven-3-6-1"><a href="#三-重新解压maven-3-6-1" class="headerlink" title="三: 重新解压maven_3.6.1"></a>三: 重新解压maven_3.6.1</h4><p>修复org/apache/maven/plugins/maven-war-plugin/3.2.3下载报错, Maven下载不完全问题</p>
+<h4 id="四-改STS设置"><a href="#四-改STS设置" class="headerlink" title="四: 改STS设置"></a>四: 改STS设置</h4><p>Preferences-General-Network Connections-Active Provider<br>Native -&gt; Direct/Manual</p>
 
       
     </div>
@@ -556,7 +556,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -578,7 +578,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -665,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE"><span class="nav-number">1.</span> <span class="nav-text">[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#未完全解决"><span class="nav-number">2.</span> <span class="nav-text">[未完全解决]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尝试一-添加Spring-Maven-AliMaven证书到Java-security"><span class="nav-number">3.</span> <span class="nav-text">尝试一:添加Spring/Maven/AliMaven证书到Java-security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尝试二-JDK版本降回1-8"><span class="nav-number">4.</span> <span class="nav-text">尝试二:JDK版本降回1.8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尝试三-重新解压maven-3-6-1"><span class="nav-number">5.</span> <span class="nav-text">尝试三: 重新解压maven_3.6.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尝试四-改STS设置"><span class="nav-number">6.</span> <span class="nav-text">尝试四:改STS设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境-JDK-12-0-2-Eclipse-2019-06-4-12-0-STS4-4-3-2-RELEASE"><span class="nav-number">1.</span> <span class="nav-text">[环境] JDK 12.0.2; Eclipse 2019-06 (4.12.0); STS4 4.3.2.RELEASE</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#未完全解决"><span class="nav-number"></span> <span class="nav-text">[未完全解决]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-添加Spring-Maven-AliMaven证书到Java-security"><span class="nav-number">1.</span> <span class="nav-text">一: 添加Spring/Maven/AliMaven证书到Java-security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-降JDK版本"><span class="nav-number">2.</span> <span class="nav-text">二: 降JDK版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-重新解压maven-3-6-1"><span class="nav-number">3.</span> <span class="nav-text">三: 重新解压maven_3.6.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四-改STS设置"><span class="nav-number">4.</span> <span class="nav-text">四: 改STS设置</span></a></li></ol></li></div>
             
 
           </div>
@@ -699,7 +699,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.2k</span>
+    <span title="Site words total count">11.3k</span>
   
 </div>
 
